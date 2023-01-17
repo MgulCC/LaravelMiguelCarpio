@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 
 use Illuminate\Http\Request;
 
+use App\Http\Controllers\UserController;
+/*
 //ruta que devuelve la vista welcome1
 Route::get('/', function () {
     return view('welcome1');
@@ -63,6 +65,15 @@ Route::redirect('/saludoDos', '/saludo2');
 Route::get('/saludo1', function(){
 })->name('primerSaludo');
 Route::redirect('/otroSaludoUno', '/primerSaludo');
+*/
+
+//ruta que devuelve la vista welcome2
+//Route::get('/usuarios/{id}/edit', UserController::class);
+Route::get('/usuarios/{id}', [UserController::class, 'edit']);
+//Route::get('/userc/{name}', UserController::class);
+
+Route::get('/saludo1', [UserController::class, 'edit']);
+
 
 
 

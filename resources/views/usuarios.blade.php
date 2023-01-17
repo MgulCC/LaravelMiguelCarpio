@@ -7,8 +7,9 @@
     <title>Document</title>
 </head>
 <body>
-  <h1> Bienvenido a la vista welcome1</h1>
-  
+  <h1> Editar usuarios</h1>
+  <h4> usuario {{$id}}</h4>
+  <br>
   
 </body>
 </html>
