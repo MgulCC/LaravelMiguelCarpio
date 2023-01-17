@@ -18,7 +18,7 @@ Route::get('/saludo1/{name}', function ($nombre) {
 
 //ruta con parametro nick opcional
 Route::get('/saludo2/{nombre}/{nick?}', function ($nombre, $nick = null) {
-    if ($nick) {
+    if ($nick == nunll) {
         return "Bienvenido {$nombre}, tu apodo es {$nick}";
     } else {
         return "Bienvenido {$nombre}, no tienes apodo";
@@ -61,10 +61,17 @@ Route::prefix('saludo2')->group( function (){
 Route::redirect('/saludoUno', '/saludo1');
 Route::redirect('/saludoDos', '/saludo2');
 
+//errores
+Route::fallback(function(){
+    return "Error 404";
+});
+
 //renombrar las rutas y redirigir
 Route::get('/saludo1', function(){
 })->name('primerSaludo');
+
 Route::redirect('/otroSaludoUno', '/primerSaludo');
+
 */
 
 //ruta que devuelve la vista welcome2
